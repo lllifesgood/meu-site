@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Input</title>
+</head>
+
+<body>
+    <input id="nome" type="text" placeholder="Digite seu nome">
+    <button onclick="cumprimentar()">Cumprimentar</button>
+    <p id="respostanome"></p>
+    <p id="respostaidade"></p>
+    <p id="respostamaioridade"></p>
+
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <button onclick="mostraridade()">Enviar Idade</button>
+    <button onclick="verificarIdade()">Verificar Idade</button>
+
+    <script>
+        function cumprimentar() {
+            let nome = document.getElementById("nome").value
+
+            if (nome === "") {
+                document.getElementById("respostanome").innerText = "Digite seu nome primeiro!"
+            } else {
+                document.getElementById("respostanome").innerText = "Olá, " + nome + "!"
+            }
+
+        }
+
+        function mostraridade() {
+            let idade = document.getElementById("idade").value
+
+            if (idade === "") {
+                document.getElementById("respostaidade").innerText = "Digite sua idade primeiro!"
+            } else {
+                document.getElementById("respostaidade").innerText = "Você tem " + idade + " anos."
+            }
+        }
+        function verificarIdade() {
+            let idade = document.getElementById("idade").value
+            if (idade === "") {
+                document.getElementById("respostamaioridade").innerText = "Digite sua idade primeiro!"
+            } else if (idade < 18) {
+                document.getElementById("respostamaioridade").innerText = "Você é menor de idade."
+            } else {
+                document.getElementById("respostamaioridade").innerText = "Você é maior de idade."
+            }
+        }
+    </script>
+</body>
+
+</html>
