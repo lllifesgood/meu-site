@@ -1,0 +1,167 @@
+.<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CADA VEZ MAIS PERTO DO OBJETIVO</title>
+  <style>
+    body {
+      background-color: rgb(49, 50, 59);
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .cartao {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgb(250, 250, 250);
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    h1 {
+      color: rgb(6, 1, 1);
+    }
+
+    p {
+      color: rgb(4, 0, 0);
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      color: rgb(8, 8, 8);
+      margin: 10px 0;
+    }
+
+    .botao {
+      display: inline-block;
+      color: rgb(8, 0, 0);
+      text-decoration: none;
+      background-color: rgb(213, 211, 215);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    .botao:hover {
+      background-color: rgb(2, 1, 3);
+      color: white;
+    }
+
+    button.botao {
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 4px 0;
+    }
+
+    .topo {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      text-align: left;
+      justify-content: center;
+    }
+
+    .foto {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid rgb(180, 180, 190);
+      margin: 4px 0;
+    }
+
+      @media (max-width: 600px) {
+        .topo {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .cartao {
+          padding: 20px;
+        }
+
+        .foto {
+          width: 80px;
+          height: 80px;
+        }
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cartao">
+    <div class="topo">
+      <img class="foto" src="foto.jpg" alt="Minha foto">
+      <div class="info">
+        <h1 id="titulo">Apenas um site</h1>
+        <p id="frase">Estou aprendendo programação do zero.</p>
+        <button class="botao" onclick="mudarFrase()">Mudar frase</button>
+
+        <input id="nome" type="text" placeholder="Digite seu nome">
+        <button class="botao" onclick="mudarTitulo()">Trocar título</button>
+        <p id="aviso"></p>
+      </div>
+    </div>
+
+    <ul id="lista"></ul>
+
+    <a class="botao" href="https://kick.com/coringa" target="_blank">Visite nosso site</a>
+  </div>
+
+  <script>
+    let cliques = 0
+
+    function mudarFrase() {
+      cliques = cliques + 1
+      let frase = ""
+
+      if (cliques === 1) {
+        frase = "Já sei criar páginas com HTML e CSS."
+      } else if (cliques === 2) {
+        frase = "Estou aprendendo JavaScript."
+      } else {
+        frase = "Meu objetivo: trabalhar com programação!"
+      }
+
+      document.getElementById("frase").innerText = frase
+    }
+
+    let gostos = ["Café", "Funk", "POE2", "AION2"]
+    let lista = document.getElementById("lista")
+
+    for (let i = 0; i < gostos.length; i++) {
+      lista.innerHTML += "<li>" + gostos[i] + "</li>"
+    }
+
+    function mudarTitulo() {
+      let nome = document.getElementById("nome").value
+      nome = nome.charAt(0).toUpperCase() + nome.slice(1)
+
+      if (nome === "") {
+        document.getElementById("aviso").innerText = "Digite seu nome primeiro!"
+      } else {
+        document.getElementById("titulo").innerText = "Olá, " + nome + "!"
+        document.getElementById("aviso").innerText = ""
+      }
+    }
+  </script>
+</body>
+
+</html>
