@@ -120,6 +120,10 @@
       line-height: 1.4;
       color: rgb(176, 0, 32);
     }
+    
+    li:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
 
     @media (max-width: 600px) {
       .topo {
@@ -150,7 +154,7 @@
       <img class="foto" src="foto.jpg" alt="Minha foto">
       <div class="info">
         <h1 id="titulo">Apenas um site</h1>
-        <p id="frase">estou aprendendo programação do zero.</p>
+        <p id="frase">Estou aprendendo programação do zero.</p>
 
         <div class="acoes">
           <button class="botao" onclick="mudarFrase()">Mudar frase</button>
