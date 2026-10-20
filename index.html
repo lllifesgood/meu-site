@@ -37,11 +37,16 @@
       list-style: none;
       padding: 0;
       margin: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
     }
 
     li {
-      color: rgb(8, 8, 8);
       margin: 10px 0;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
     }
 
     .botao {
@@ -179,11 +184,13 @@
       document.getElementById("frase").innerText = frase
     }
 
-    let gostos = ["Café", "Funk", "POE2", "AION2"]
+    let gostos = ["Comer", "Funk", "POE2", "AION2", "Valorant", "CS-GO", "Refrigerante"]
     let lista = document.getElementById("lista")
+    let cores = ["#ffe0e0", "#e0ecff", "#e0ffe8", "#fff5d2"]
+
 
     for (let i = 0; i < gostos.length; i++) {
-      lista.innerHTML += "<li>" + gostos[i] + "</li>"
+      lista.innerHTML += "<li style='background-color:" + cores[i % cores.length] + "'>" + gostos[i] + "</li>"
     }
 
     function mudarTitulo() {
@@ -196,6 +203,8 @@
         document.getElementById("titulo").innerText = "Olá, " + nome + "!"
         document.getElementById("aviso").innerText = ""
       }
+
+
     }
   </script>
 </body>
