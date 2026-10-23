@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lista de tarefas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de tarefas</title>
 </head>
+
 <body>
-  <h1>Minhas tarefas</h1>
+    <h1>Minhas tarefas</h1>
 
-  <input id="tarefa" type="text" placeholder="Digite uma tarefa">
-  <button onclick="adicionarTarefa()">Adicionar</button>
-  <p id="aviso"></p>
+    <input id="tarefa" type="text" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <p id="aviso"></p>
 
-  <ul id="lista"></ul>
+    <ul id="lista"></ul>
 
-  <script>
-    function adicionarTarefa() {
-  let tarefa = document.getElementById("tarefa").value
-    document.getElementById("tarefa").value = ""
-  if (tarefa === "") {
-    document.getElementById("aviso").innerText = "Digite uma tarefa primeiro!"
-  } else {
-    document.getElementById("lista").innerHTML += "<li>" + tarefa + "</li>"
-    document.getelementbyid("tarefa").value = ""
-  }
-}
-  </script>
+    <script>
+        function adicionarTarefa() {
+            let tarefa = document.getElementById("tarefa").value
+            document.getElementById("tarefa").value = ""
+            if (tarefa === "") {
+                document.getElementById("aviso").innerText = "Digite uma tarefa primeiro!"
+            } else {
+                document.getElementById("lista").innerHTML += "<li>" + tarefa + "</li>"
+            }
+        }
+    </script>
 </body>
+
 </html>
