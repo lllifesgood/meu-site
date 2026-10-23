@@ -27,6 +27,10 @@ Meu primeiro projeto de front-end, feito enquanto aprendo programação do zero.
 
 Baixe os arquivos e abra o `index.html` no navegador.
 
+## Ver o projeto online
+
+🔗 [Abrir o cartão de perfil](https://SEU-USUARIO.github.io/meu-site/)
+
 ## Autor
 
 Gabriel
